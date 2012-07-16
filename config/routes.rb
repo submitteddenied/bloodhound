@@ -3,5 +3,5 @@ Bloodhound::Application.routes.draw do
 
   resources :projects
 
-  match 'hook/:api_key' => 'hook#receive', via: :post
+  match 'hook/:service/:api_key' => 'hook#receive', via: :post
 end
