@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<activity> 
+  <id type="integer">220563153</id> 
+  <version type="integer">113</version> 
+  <event_type>add_story_label</event_type> 
+  <occurred_at type="datetime">2012/07/16 00:28:29 UTC</occurred_at> 
+  <author>Michael Jensen</author> 
+  <project_id type="integer">518057</project_id> 
+  <description>Michael Jensen added this label to 2 stories</description> 
+  <stories type="array"> 
+    <story> 
+      <id type="integer">28273143</id> 
+      <url>http://www.pivotaltracker.com/services/v3/projects/518057/stories/28273143</url> 
+    </story> 
+    <story> 
+      <id type="integer">29520911</id> 
+      <url>http://www.pivotaltracker.com/services/v3/projects/518057/stories/29520911</url> 
+    </story> 
+  </stories> 
+  <label>security</label> 
+</activity>
+

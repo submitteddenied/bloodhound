@@ -5,7 +5,7 @@ class PivotalTrackerActivity < ActiveRecord::Base
     activities = []
 
     doc = Nokogiri.XML(xml)
-    doc.xpath('//stories').each do |story|
+    doc.xpath('//stories/story').each do |story|
       activities << self.create(
         author: doc.xpath("//activity/author").first.text(),
         pt_id: doc.xpath("//activity/project_id").first.text(),
