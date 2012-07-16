@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml-rails'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -42,3 +43,5 @@ gem "nifty-generators", :group => :development
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test
