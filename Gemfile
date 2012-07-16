@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 
 gem 'pg'
+gem 'nokogiri'
 
 group :development do
   gem 'sqlite3'
