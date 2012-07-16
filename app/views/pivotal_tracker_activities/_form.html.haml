@@ -1,0 +1,36 @@
+= form_for @pivotal_tracker_activity do |f|
+  = f.error_messages
+  %p
+    = f.label :pt_id
+    %br
+    = f.number_field :pt_id
+  %p
+    = f.label :version
+    %br
+    = f.number_field :version
+  %p
+    = f.label :event_type
+    %br
+    = f.text_field :event_type
+  %p
+    = f.label :occurred_at
+    %br
+    = f.datetime_select :occurred_at
+  %p
+    = f.label :author
+    %br
+    = f.text_field :author
+  %p
+    = f.label :project_id
+    %br
+    = f.number_field :project_id
+  %p
+    = f.label :description
+    %br
+    = f.text_field :description
+  %p
+    = f.label :project_id
+    %br
+    = f.number_field :project_id
+  %p
+    = f.submit

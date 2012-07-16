@@ -1,0 +1,27 @@
+- title "Pivotal Tracker Activities"
+
+%table
+  %tr
+    %th Pt
+    %th Version
+    %th Event type
+    %th Occurred at
+    %th Author
+    %th Project
+    %th Description
+    %th Project
+  - for pivotal_tracker_activity in @pivotal_tracker_activities
+    %tr
+      %td= pivotal_tracker_activity.pt_id
+      %td= pivotal_tracker_activity.version
+      %td= pivotal_tracker_activity.event_type
+      %td= pivotal_tracker_activity.occurred_at
+      %td= pivotal_tracker_activity.author
+      %td= pivotal_tracker_activity.project_id
+      %td= pivotal_tracker_activity.description
+      %td= pivotal_tracker_activity.project_id
+      %td= link_to 'Show', pivotal_tracker_activity
+      %td= link_to 'Edit', edit_pivotal_tracker_activity_path(pivotal_tracker_activity)
+      %td= link_to 'Destroy', pivotal_tracker_activity, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Pivotal Tracker Activity", new_pivotal_tracker_activity_path
