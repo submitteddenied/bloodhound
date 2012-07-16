@@ -1,4 +1,6 @@
 Bloodhound::Application.routes.draw do
+  resources :pivotal_tracker_activities
+
   resources :projects
 
   # The priority is based upon order of creation:
