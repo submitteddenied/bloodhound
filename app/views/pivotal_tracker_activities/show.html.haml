@@ -28,6 +28,6 @@
 %p
   = link_to "Edit", edit_pivotal_tracker_activity_path(@pivotal_tracker_activity)
   |
-  = link_to "Destroy", @pivotal_tracker_activity, :confirm => 'Are you sure?', :method => :delete
+  = link_to "Destroy", @pivotal_tracker_activity, data: {confirm: 'Are you sure?'}, method: :delete
   |
   = link_to "View All", pivotal_tracker_activities_path

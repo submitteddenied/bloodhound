@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    params[:project].delete[:api_key]
+    
     if @project.update_attributes(params[:project])
       redirect_to @project, :notice  => "Successfully updated project."
     else

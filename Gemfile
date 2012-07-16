@@ -47,4 +47,4 @@ gem "nifty-generators", :group => :development
 # To use debugger
 # gem 'debugger'
 
-gem "mocha", :group => :test
+gem "mocha", group: :test, require: false

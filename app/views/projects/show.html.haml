@@ -10,6 +10,6 @@
 %p
   = link_to "Edit", edit_project_path(@project)
   |
-  = link_to "Destroy", @project, :confirm => 'Are you sure?', :method => :delete
+  = link_to "Destroy", @project, data: {confirm: 'Are you sure?'}, method: :delete
   |
   = link_to "View All", projects_path
