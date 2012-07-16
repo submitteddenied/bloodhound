@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716002113) do
+ActiveRecord::Schema.define(:version => 20120716003651) do
 
   create_table "pivotal_tracker_activities", :force => true do |t|
     t.integer  "pt_id"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(:version => 20120716002113) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "story_id"
+    t.string   "story_url"
   end
 
   create_table "projects", :force => true do |t|
