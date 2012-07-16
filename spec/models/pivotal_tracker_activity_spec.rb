@@ -29,8 +29,13 @@ XML
     end
 
     it 'converts input xml to instances of PivotalTrackerActivity' do
-      #result = PivotalTrackerActivity.from_xml(tracker_xml)
-      #result[:author].should == 'Michael Jensen'
+      activity = PivotalTrackerActivity.from_xml(tracker_xml)
+      activity.author.should == 'Michael Jensen'
+      activity.pt_id.should == 518057
+      activity.version.should == 116
+      activity.event_type.should == 'story_update'
+      activity.occurred_at.should == Time.parse('2012/07/16 00:30:00 UTC')
+      activity.description.should == 'Michael Jensen started Move existing data to the Database'
     end
   end
 end
