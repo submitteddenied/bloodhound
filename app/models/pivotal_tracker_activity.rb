@@ -14,10 +14,28 @@ class PivotalTrackerActivity < ActiveRecord::Base
         occurred_at: Time.parse(doc.xpath("//activity/occurred_at").first.text()),
         description: doc.xpath("//activity/description").first.text(),
         story_id: story.xpath('.//id').first.text(),
-        story_url: story.xpath('.//url').first.text(),
+        story_url: story.xpath('.//url').first.text()
       )
     end
+    activities
+  end
 
+  def self.from_api(data)
+    activities = []
+    data = data['activity']
+    data['stories'].each do |story|
+      activities << PivotalTrackerActivity.create(
+        author:      data['author'],
+        pt_id:       data['project_id'],
+        version:     data['version'],
+        event_type:  data['event_type'],
+        occurred_at: data['occurred_at'],
+        description: data['description'],
+        story_id:    story['id'],
+        story_url:   story['url']
+      )
+      logger.info "Created activity for story: #{story['id']}" unless activities[-1].new_record?
+    end
     activities
   end
 end
