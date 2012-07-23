@@ -1,5 +1,6 @@
 Bloodhound::Application.routes.draw do
   resources :pivotal_tracker_activities
+  resources :github_activities, only: [:index]
 
   resources :projects
 

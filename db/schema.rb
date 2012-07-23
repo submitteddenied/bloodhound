@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716003651) do
+ActiveRecord::Schema.define(:version => 20120723045108) do
+
+  create_table "github_activities", :force => true do |t|
+    t.string   "author_name"
+    t.string   "author_email"
+    t.string   "git_sha"
+    t.string   "message"
+    t.string   "github_url"
+    t.datetime "occurred_at"
+    t.integer  "project_id"
+  end
 
   create_table "pivotal_tracker_activities", :force => true do |t|
     t.integer  "pt_id"

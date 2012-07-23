@@ -1,0 +1,18 @@
+- title "Github Activities"
+
+%table
+  %tr
+    %th Author Name
+    %th Author Email
+    %th Git SHA
+    %th Message
+    %th Github URL
+    %th Occurred At
+  - @github_activities.each do |activity|
+    %tr
+      %td= activity.author_name
+      %td= activity.author_email
+      %td= activity.git_sha
+      %td= activity.message
+      %td= activity.github_url
+      %td= activity.occurred_at
