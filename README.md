@@ -1,4 +1,4 @@
-bloodhound
+Bloodhound
 ==========
 
-Tracks your activity
+Tracks your activity. By smell of course.
