@@ -1,0 +1,87 @@
+{
+	"after": "36fe4c049088129a65accad4f339a5796f1476b8",
+	"before": "41378021872f3ecaa03c5b6ca964746a14b2eafc",
+	"commits": [{
+		"added": ["spec/fixtures/api_requests/github/commit.json", "spec/fixtures/api_requests/github/tag_no_commit_data.json", "spec/fixtures/api_requests/github/tag_with_commit_data.json"],
+		"author": {
+			"email": "engineers+mjensen@sharethrough.com",
+			"name": "Michael Jensen"
+		},
+		"committer": {
+			"email": "engineers+mjensen@sharethrough.com",
+			"name": "Michael Jensen"
+		},
+		"distinct": true,
+		"id": "b7a26f2a717844188f9cab7ae61cb996219d1608",
+		"message": "Add some fixtures from Github",
+		"modified": [],
+		"removed": [],
+		"timestamp": "2012-07-22T22:24:43-07:00",
+		"url": "https://github.com/emjay1988/bloodhound/commit/b7a26f2a717844188f9cab7ae61cb996219d1608"
+	}, {
+		"added": ["app/controllers/github_activities_controller.rb", "app/models/github_activity.rb", "app/views/github_activities/index.html.haml", "db/migrate/20120723045108_create_github_activities_table.rb"],
+		"author": {
+			"email": "engineers+mjensen@sharethrough.com",
+			"name": "Michael Jensen"
+		},
+		"committer": {
+			"email": "engineers+mjensen@sharethrough.com",
+			"name": "Michael Jensen"
+		},
+		"distinct": true,
+		"id": "36fe4c049088129a65accad4f339a5796f1476b8",
+		"message": "add github activities",
+		"modified": ["config/routes.rb", "db/schema.rb"],
+		"removed": [],
+		"timestamp": "2012-07-22T23:03:52-07:00",
+		"url": "https://github.com/emjay1988/bloodhound/commit/36fe4c049088129a65accad4f339a5796f1476b8"
+	}],
+	"compare": "https://github.com/emjay1988/bloodhound/compare/41378021872f...36fe4c049088",
+	"created": false,
+	"deleted": false,
+	"forced": false,
+	"head_commit": {
+		"added": ["app/controllers/github_activities_controller.rb", "app/models/github_activity.rb", "app/views/github_activities/index.html.haml", "db/migrate/20120723045108_create_github_activities_table.rb"],
+		"author": {
+			"email": "engineers+mjensen@sharethrough.com",
+			"name": "Michael Jensen"
+		},
+		"committer": {
+			"email": "engineers+mjensen@sharethrough.com",
+			"name": "Michael Jensen"
+		},
+		"distinct": true,
+		"id": "36fe4c049088129a65accad4f339a5796f1476b8",
+		"message": "add github activities",
+		"modified": ["config/routes.rb", "db/schema.rb"],
+		"removed": [],
+		"timestamp": "2012-07-22T23:03:52-07:00",
+		"url": "https://github.com/emjay1988/bloodhound/commit/36fe4c049088129a65accad4f339a5796f1476b8"
+	},
+	"pusher": {
+		"email": "emjay1988@gmail.com",
+		"name": "emjay1988"
+	},
+	"ref": "refs/heads/master",
+	"repository": {
+		"created_at": "2012-07-15T16:27:28-07:00",
+		"description": "Tracks your activity",
+		"fork": false,
+		"forks": 1,
+		"has_downloads": true,
+		"has_issues": true,
+		"has_wiki": true,
+		"language": "Ruby",
+		"name": "bloodhound",
+		"open_issues": 0,
+		"owner": {
+			"email": "emjay1988@gmail.com",
+			"name": "emjay1988"
+		},
+		"private": false,
+		"pushed_at": "2012-07-22T23:04:01-07:00",
+		"size": 364,
+		"url": "https://github.com/emjay1988/bloodhound",
+		"watchers": 1
+	}
+}
