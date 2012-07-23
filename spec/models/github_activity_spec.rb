@@ -20,6 +20,14 @@ describe GithubActivity do
       activities[0].message.should == 'changed readme'
     end
     
+    context 'with two commits in one push' do
+      it 'creates two activities' do
+        activities = GithubActivity.from_api(two_pushes_data)
+        activities.count.should == 2
+      end
+      
+    end
+    
     it 'saves the activity' do
       lambda { GithubActivity.from_api(commit_data) }.should change(GithubActivity, :count).by(1)
     end
