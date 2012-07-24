@@ -8,16 +8,19 @@ describe GithubActivity do
   describe '.from_api' do
     let(:commit_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/commit.json')) }
     let(:two_pushes_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/push_with_two_commits.json')) }
+    let(:tag_push) { JSON.parse(File.read('spec/fixtures/api_requests/github/tag_no_commit_data.json')) }
     
-    it 'builds a pivotal tracker activity' do
-      activities = GithubActivity.from_api(commit_data)
-      activities[0].should be_instance_of GithubActivity
-      activities[0].author_name.should == 'Michael Jensen'
-      activities[0].author_email.should == 'engineers+mjensen@sharethrough.com'
-      activities[0].occurred_at.should == Time.parse('2012-07-22T21:14:15-07:00')
-      activities[0].github_url.should == 'https://github.com/emjay1988/bloodhound/commit/7c94df422f1efe7ad452981902328fef30d9122e'
-      activities[0].git_sha.should == '7c94df422f1efe7ad452981902328fef30d9122e'
-      activities[0].message.should == 'changed readme'
+    context 'with a single commit' do
+      it 'builds a pivotal tracker activity' do
+        activities = GithubActivity.from_api(commit_data)
+        activities[0].should be_instance_of GithubActivity
+        activities[0].author_name.should == 'Michael Jensen'
+        activities[0].author_email.should == 'engineers+mjensen@sharethrough.com'
+        activities[0].occurred_at.should == Time.parse('2012-07-22T21:14:15-07:00')
+        activities[0].github_url.should == 'https://github.com/emjay1988/bloodhound/commit/7c94df422f1efe7ad452981902328fef30d9122e'
+        activities[0].git_sha.should == '7c94df422f1efe7ad452981902328fef30d9122e'
+        activities[0].message.should == 'changed readme'
+      end
     end
     
     context 'with two commits in one push' do
@@ -25,7 +28,17 @@ describe GithubActivity do
         activities = GithubActivity.from_api(two_pushes_data)
         activities.count.should == 2
       end
-      
+    end
+    
+    context 'with a tag push' do
+      it 'creates a "Tag Push" activity' do
+        activities = GithubActivity.from_api(tag_push)
+        activities[0].message.should == 'Pushed tag: v0.01'
+        activities[0].git_sha.should == '8bac69edf751b0fb78b5caaf9a33a9ec54e640b0'
+        activities[0].author_name.should == 'emjay1988'
+        activities[0].author_email.should == 'emjay1988@gmail.com'
+        activities[0].github_url.should == 'https://github.com/emjay1988/bloodhound/compare/v0.01'
+      end
     end
     
     it 'saves the activity' do

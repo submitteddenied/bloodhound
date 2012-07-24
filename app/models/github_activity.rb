@@ -5,14 +5,25 @@ class GithubActivity < ActiveRecord::Base
 
   def self.from_api(data)
     activities = []
-    data['commits'].each do |commit|
+    if data['ref'] == 'refs/heads/master'
+      data['commits'].each do |commit|
+        activities << GithubActivity.create(
+          author_name: commit['author']['name'],
+          author_email: commit['author']['email'],
+          git_sha: commit['id'],
+          message: commit['message'],
+          occurred_at: Time.parse(commit['timestamp']),
+          github_url: commit['url']
+        )
+      end
+    else
       activities << GithubActivity.create(
-        author_name: commit['author']['name'],
-        author_email: commit['author']['email'],
-        git_sha: commit['id'],
-        message: commit['message'],
-        occurred_at: Time.parse(commit['timestamp']),
-        github_url: commit['url']
+        author_name: data['pusher']['name'],
+        author_email: data['pusher']['email'],
+        git_sha: data['after'],
+        message: "Pushed tag: #{data['ref'].split('/')[2..-1].join('/')}",
+        occurred_at: Time.parse(data['repository']['pushed_at']),
+        github_url: data['compare']
       )
     end
     activities
