@@ -9,6 +9,7 @@ describe GithubActivity do
     let(:commit_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/commit.json')) }
     let(:two_pushes_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/push_with_two_commits.json')) }
     let(:tag_push) { JSON.parse(File.read('spec/fixtures/api_requests/github/tag_no_commit_data.json')) }
+    let(:tag_and_commit_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/tag_with_commit_data.json')) }
     
     context 'with a single commit' do
       it 'builds a pivotal tracker activity' do
@@ -38,6 +39,26 @@ describe GithubActivity do
         activities[0].author_name.should == 'emjay1988'
         activities[0].author_email.should == 'emjay1988@gmail.com'
         activities[0].github_url.should == 'https://github.com/emjay1988/bloodhound/compare/v0.01'
+      end
+    end
+    
+    context 'with commits in a tag push' do
+      let(:activities) { GithubActivity.from_api(tag_and_commit_data) }
+      
+      it 'creates an activity for both the tag and commit' do
+        activities.count.should == 2
+      end
+      
+      it 'correctly creates commit activities' do
+        commit_activity = activities[1]
+        commit_activity.message.should == "more readme stuff (can you tell I'm testing the github post-receive hook?)"
+        commit_activity.git_sha.should == '41378021872f3ecaa03c5b6ca964746a14b2eafc'
+      end
+      
+      it 'correctly creates a tag activity' do
+        tag_activity = activities[0]
+        tag_activity.message.should == 'Pushed tag: v0.02'
+        tag_activity.git_sha.should == '939e549a63a330e28ca0f9c0a8cb9497a79f4126'
       end
     end
     
