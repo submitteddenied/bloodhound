@@ -5,17 +5,18 @@ class GithubActivity < ActiveRecord::Base
 
   def self.from_api(data)
     activities = []
-    if data['ref'] != 'refs/heads/master'
+    payload = JSON.parse(data['payload'])
+    if payload['ref'] != 'refs/heads/master'
       activities << GithubActivity.create(
-        author_name: data['pusher']['name'],
-        author_email: data['pusher']['email'],
-        git_sha: data['after'],
-        message: "Pushed tag: #{data['ref'].split('/')[2..-1].join('/')}",
-        occurred_at: Time.parse(data['repository']['pushed_at']),
-        github_url: data['compare']
+        author_name: payload['pusher']['name'],
+        author_email: payload['pusher']['email'],
+        git_sha: payload['after'],
+        message: "Pushed tag: #{payload['ref'].split('/')[2..-1].join('/')}",
+        occurred_at: Time.parse(payload['repository']['pushed_at']),
+        github_url: payload['compare']
       )
     end
-    data['commits'].each do |commit|
+    payload['commits'].each do |commit|
       activities << GithubActivity.create(
         author_name: commit['author']['name'],
         author_email: commit['author']['email'],
