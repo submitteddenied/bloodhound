@@ -6,10 +6,10 @@ describe GithubActivity do
   end
 
   describe '.from_api' do
-    let(:commit_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/commit.json')) }
-    let(:two_pushes_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/push_with_two_commits.json')) }
-    let(:tag_push) { JSON.parse(File.read('spec/fixtures/api_requests/github/tag_no_commit_data.json')) }
-    let(:tag_and_commit_data) { JSON.parse(File.read('spec/fixtures/api_requests/github/tag_with_commit_data.json')) }
+    let(:commit_data)         { { "payload" => File.read('spec/fixtures/api_requests/github/commit.json') } }
+    let(:two_pushes_data)     { { "payload" => File.read('spec/fixtures/api_requests/github/push_with_two_commits.json') } }
+    let(:tag_push)            { { "payload" => File.read('spec/fixtures/api_requests/github/tag_no_commit_data.json') } }
+    let(:tag_and_commit_data) { { "payload" => File.read('spec/fixtures/api_requests/github/tag_with_commit_data.json') } }
     
     context 'with a single commit' do
       it 'builds a pivotal tracker activity' do
