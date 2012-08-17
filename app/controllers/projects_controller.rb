@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_filter :authenticate, except: [:index, :new, :create]
+
   def index
     @projects = Project.all
   end
@@ -39,5 +41,14 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_url, :notice => "Successfully destroyed project."
+  end
+
+  protected
+
+  def authenticate
+    project = Project.find(params[:id])
+    authenticate_or_request_with_http_basic do |username, password|
+      username == 'admin' && password == project.password
+    end
   end
 end
