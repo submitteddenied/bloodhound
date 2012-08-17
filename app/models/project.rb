@@ -1,8 +1,12 @@
 class Project < ActiveRecord::Base
-  attr_accessible :name, :api_key
+  attr_accessible :name, :api_key, :password
   
   has_many :pivotal_tracker_activities
   has_many :github_activities
+
+  validates_presence_of :name
+
+  validates :password, presence: true, length: { minimum: 6 }
   
   def generate_key
     self.api_key = SecureRandom.hex(8)
