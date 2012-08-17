@@ -4,5 +4,5 @@ Bloodhound::Application.routes.draw do
     resources :github_activities, only: [:index]
   end
 
-  match 'hook/:service/:api_key' => 'hook#receive', via: :post
+  match 'hook/:service/:api_key' => 'hook#receive', via: :post, as: 'hook'
 end

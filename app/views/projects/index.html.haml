@@ -3,13 +3,10 @@
 %table
   %tr
     %th Name
-    %th Api key
   - for project in @projects
     %tr
       %td= project.name
-      %td= project.api_key
       %td= link_to 'Show', project
       %td= link_to 'Edit', edit_project_path(project)
-      %td= link_to 'Destroy', project, data: {confirm: 'Are you sure?'}, method: :delete
 
 %p= link_to "New Project", new_project_path
