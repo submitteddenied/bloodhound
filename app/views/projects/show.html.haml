@@ -8,6 +8,10 @@
   = @project.api_key
 
 %p
+  = link_to "Github activity", project_github_activities_path(@project)
+  |
+  = link_to "Tracker activity", project_pivotal_tracker_activities_path(@project)
+  |
   = link_to "Edit", edit_project_path(@project)
   |
   = link_to "Destroy", @project, data: {confirm: 'Are you sure?'}, method: :delete
