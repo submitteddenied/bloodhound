@@ -1,12 +1,7 @@
 - title "Projects"
 
-%table
-  %tr
-    %th Name
-  - for project in @projects
-    %tr
-      %td= project.name
-      %td= link_to 'Show', project
-      %td= link_to 'Edit', edit_project_path(project)
+%ul
+- for project in @projects
+  %li= link_to project.name, project
 
 %p= link_to "New Project", new_project_path
