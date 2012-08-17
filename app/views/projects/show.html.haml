@@ -4,9 +4,6 @@
   %strong Name:
   = @project.name
 %p
-  %strong Api Key:
-  = @project.api_key
-%p
   %strong Tracker Webhook URL:
   = hook_url('tracker', @project.api_key)
 %p
