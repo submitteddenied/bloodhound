@@ -11,4 +11,10 @@ class Project < ActiveRecord::Base
   def generate_key
     self.api_key = SecureRandom.hex(8)
   end
+
+  def activities
+    (GithubActivity.where(project_id: id) + PivotalTrackerActivity.where(project_id: id)).sort do |x, y|
+      y.created_at <=> x.created_at
+    end
+  end
 end
