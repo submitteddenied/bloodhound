@@ -4,7 +4,7 @@ class PivotalTrackerActivityDecorator
   end
 
   def partial
-    'pivotal_tracker_activity_story_update'
+    'pivotal_tracker_activity'
   end
 
   def event_tag
