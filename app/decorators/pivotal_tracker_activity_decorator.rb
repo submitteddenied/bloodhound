@@ -36,6 +36,10 @@ class PivotalTrackerActivityDecorator
     m[2]
   end
 
+  def story_url
+    @activity.story_url
+  end
+
   def occurred_at
     @activity.occurred_at
   end

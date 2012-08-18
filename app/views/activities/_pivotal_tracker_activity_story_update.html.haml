@@ -6,6 +6,7 @@
       = time_ago_in_words(activity.occurred_at) + ' ago'
   .event_tag{ class: activity.event_tag }
     = activity.event_tag.capitalize
+  = link_to('View full story >', activity.story_url, class: 'story_link', target: "blank")
   .story_title
     = activity.story_title
 

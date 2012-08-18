@@ -13,3 +13,10 @@
 .activity .delivered {
   background-color: #E87F00;
 }
+
+.activity a.story_link {
+  font-size: 0.5em;
+  text-decoration: none;
+  color: #327A9F;
+  float: right;
+}
