@@ -5,9 +5,8 @@
   overflow: auto;
 }
 
-.activity .tracker_logo {
+.activity .logo {
   float: left;
-  background-image: url(pivotal-tracker-ios-32.png);
   width: 32px;
   height: 32px;
   margin-right: 10px;
@@ -31,7 +30,7 @@
   margin: 2px 0 0 0;
 }
 
-.activity .story_title {
+.activity .message {
   font-weight: bold;
   font-size: 1em;
   padding-top: 5px;

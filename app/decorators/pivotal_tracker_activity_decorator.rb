@@ -17,7 +17,7 @@ class PivotalTrackerActivityDecorator
     @activity.author
   end
 
-  def story_title
+  def message
     r = %r|^(.*?)(".*)|
     m = r.match @activity.description
     m[2]

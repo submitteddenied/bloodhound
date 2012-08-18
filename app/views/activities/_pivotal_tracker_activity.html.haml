@@ -1,5 +1,5 @@
 .activity.pivotal_tracker
-  .tracker_logo
+  .logo
   .author
     = activity.author
     .occurred_at
@@ -7,6 +7,6 @@
   .event_tag{ class: activity.event_tag }
     = activity.event_tag.capitalize
   = link_to('View full story >', activity.story_url, class: 'story_link', target: "blank")
-  .story_title
-    = activity.story_title
+  .message
+    = activity.message
 

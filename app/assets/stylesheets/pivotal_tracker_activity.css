@@ -21,3 +21,7 @@
   float: right;
   padding-top: 5px;
 }
+
+.activity.pivotal_tracker .logo {
+  background-image: url(pivotal-tracker-ios-32.png);
+}
