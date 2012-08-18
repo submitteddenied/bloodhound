@@ -1,16 +1,44 @@
 .activity {
-  margin-bottom: 10px;
+  font: 0.75em Helvetica;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 20px;
+  overflow: auto;
+}
+
+.activity .author_column {
+  float: left;
+  width: 120px;
+}
+
+.activity .author {
+  font-weight: bold;
+}
+
+.activity .occurred_at {
+  font-size: 0.5em;
+  color: #666;
+  margin: 2px 0 0 0;
+}
+
+.activity .story_column {
+  float: left;
+}
+
+.activity .story_title {
+  font-weight: bold;
+  font-size: 1.33em;
 }
 
 .activity .event_tag {
-  background-color: black;
+  background-color: #999;
+  font-weight: bold;
   color: white;
-  width: 100px;
+  padding: 5px 10px 5px 10px;
+  float: right;
+  text-align: right;
+
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
-  padding: 5px 5px 5px 20px;
 }
-
-

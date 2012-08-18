@@ -1,3 +1,15 @@
 .activity .accepted {
-  background-color: green;
+  background-color: #507C00;
+}
+
+.activity .rejected {
+  background-color: #851024;
+}
+
+.activity .finished {
+  background-color: #14274A;
+}
+
+.activity .delivered {
+  background-color: #E87F00;
 }
