@@ -1,8 +1,7 @@
 .activity.pivotal_tracker
   .tracker_logo
-  .author_column
-    .author
-      = activity.author
+  .author
+    = activity.author
     .occurred_at
       = time_ago_in_words(activity.occurred_at) + ' ago'
   .event_tag{ class: activity.event_tag }

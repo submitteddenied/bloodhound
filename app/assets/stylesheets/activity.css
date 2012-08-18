@@ -5,11 +5,6 @@
   overflow: auto;
 }
 
-.activity .author_column {
-  float: left;
-  width: 120px;
-}
-
 .activity .tracker_logo {
   float: left;
   background-image: url(pivotal-tracker-ios-32.png);
@@ -25,6 +20,9 @@
 
 .activity .author {
   font-weight: bold;
+  float: left;
+  width: 120px;
+  height: 35px;
 }
 
 .activity .occurred_at {

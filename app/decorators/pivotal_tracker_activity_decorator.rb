@@ -15,8 +15,7 @@ class PivotalTrackerActivityDecorator
   end
 
   def partial
-    return 'pivotal_tracker_activity_story_update' if @activity.event_type == 'story_update'
-    return 'pivotal_tracker_activity_note_create' if @activity.event_type == 'note_create'
+    return 'pivotal_tracker_activity_story_update'
   end
 
   def event_tag
