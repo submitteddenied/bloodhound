@@ -15,7 +15,8 @@ class PivotalTrackerActivityDecorator
   end
 
   def partial
-    'pivotal_tracker_activity'
+    return 'pivotal_tracker_activity_story_update' if @activity.event_type == 'story_update'
+    return 'pivotal_tracker_activity_note_create' if @activity.event_type == 'note_create'
   end
 
   def event_tag
@@ -24,7 +25,6 @@ class PivotalTrackerActivityDecorator
     STORY_EVENTS.each do |event|
       return event if m[1] =~ %r{^#{event}}
     end
-    return ''
   end
 
   def author
@@ -32,7 +32,9 @@ class PivotalTrackerActivityDecorator
   end
 
   def story_title
-    @activity.description
+    r = %r|^(.*?)"(.*?)"|
+    m = r.match @activity.description
+    m[2]
   end
 
   def occurred_at
