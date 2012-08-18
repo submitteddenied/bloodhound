@@ -5,6 +5,9 @@ class PivotalTrackerActivityDecorator
     'estimated',
     'edited',
     'accepted',
+    'rejected',
+    'delivered',
+    'added comment'
   ]
 
   def initialize(activity)
@@ -16,9 +19,12 @@ class PivotalTrackerActivityDecorator
   end
 
   def event_tag
-    r = %r|^#{@activity.author} ([a-zA-Z]*) |
+    r = %r|^#{@activity.author} (.*)"|
     m = r.match @activity.description
-    m[1] if STORY_EVENTS.include?(m[1])
+    STORY_EVENTS.each do |event|
+      return event if m[1] =~ %r{^#{event}}
+    end
+    return ''
   end
 
   def author
@@ -26,9 +32,7 @@ class PivotalTrackerActivityDecorator
   end
 
   def story_title
-    r = %r|^#{@activity.author} [a-zA-Z]* "(.*)"|
-    m = r.match @activity.description
-    m[1]
+    @activity.description
   end
 
   def occurred_at
