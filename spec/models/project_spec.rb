@@ -12,9 +12,9 @@ describe Project do
 
   describe '#activities' do
     it 'returns a sorted list of tracker and github activities' do
-      g1 = stub('github_activity', created_at: '2012-07-11')
-      g2 = stub('github_activity', created_at: '2012-07-07')
-      a1 = stub('tracker_activity', created_at: '2012-07-10')
+      g1 = stub('github_activity', occurred_at: '2012-07-11')
+      g2 = stub('github_activity', occurred_at: '2012-07-07')
+      a1 = stub('tracker_activity', occurred_at: '2012-07-10')
 
       GithubActivity.stub(:where).and_return([g1, g2])
       PivotalTrackerActivity.stub(:where).and_return([a1])
