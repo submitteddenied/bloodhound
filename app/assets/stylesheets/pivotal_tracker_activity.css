@@ -14,14 +14,6 @@
   background-color: #E87F00;
 }
 
-.activity.pivotal_tracker a.story_link {
-  font-size: 0.5em;
-  text-decoration: none;
-  color: #327A9F;
-  float: right;
-  padding-top: 5px;
-}
-
 .activity.pivotal_tracker .logo {
   background-image: url(pivotal-tracker-ios-32.png);
 }

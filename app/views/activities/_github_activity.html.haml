@@ -4,3 +4,6 @@
     = activity.author
     .occurred_at
       = time_ago_in_words(activity.occurred_at) + ' ago'
+  .event_tag{ class: activity.event_tag }
+    = activity.event_tag.capitalize
+  = link_to('View in Github >', activity.url, class: 'link_to_site', target: "blank")

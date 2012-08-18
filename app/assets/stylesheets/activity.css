@@ -44,3 +44,11 @@
   float: left;
   margin-right: 5px;
 }
+
+.activity a.link_to_site {
+  font-size: 0.5em;
+  text-decoration: none;
+  color: #327A9F;
+  float: right;
+  padding-top: 5px;
+}
