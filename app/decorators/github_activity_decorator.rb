@@ -15,8 +15,12 @@ class GithubActivityDecorator
     @activity.github_url
   end
 
+  def message
+    @activity.message
+  end
+
   def event_tag
-    'commit'
+    'event'
   end
 
   def occurred_at
