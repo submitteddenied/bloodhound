@@ -1,0 +1,16 @@
+.activity {
+  margin-bottom: 10px;
+}
+
+.activity .event_tag {
+  background-color: black;
+  color: white;
+  width: 100px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 5px 5px 20px;
+}
+
+

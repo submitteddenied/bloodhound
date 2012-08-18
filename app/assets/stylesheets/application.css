@@ -11,3 +11,6 @@
  *= require_self
  *= require_tree .
  */
+
+= require 'activity.css'
+= require 'pivotal_tracker_activity.css'
