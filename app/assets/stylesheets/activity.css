@@ -10,6 +10,19 @@
   width: 120px;
 }
 
+.activity .tracker_logo {
+  float: left;
+  background-image: url(pivotal-tracker-ios-32.png);
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+
 .activity .author {
   font-weight: bold;
 }
@@ -20,13 +33,10 @@
   margin: 2px 0 0 0;
 }
 
-.activity .story_column {
-  float: left;
-}
-
 .activity .story_title {
   font-weight: bold;
   font-size: 1.33em;
+  float: left;
 }
 
 .activity .event_tag {
