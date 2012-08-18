@@ -5,8 +5,8 @@
       = activity.author
     .occurred_at
       = time_ago_in_words(activity.occurred_at) + ' ago'
-  .story_title
-    = activity.story_title
   .event_tag{ class: activity.event_tag }
     = activity.event_tag.capitalize
+  .story_title
+    = activity.story_title
 

@@ -32,7 +32,7 @@ class PivotalTrackerActivityDecorator
   end
 
   def story_title
-    r = %r|^(.*?)"(.*?)"|
+    r = %r|^(.*?)(".*)|
     m = r.match @activity.description
     m[2]
   end
