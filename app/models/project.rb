@@ -14,7 +14,7 @@ class Project < ActiveRecord::Base
 
   def activities
     (GithubActivity.where(project_id: id) + PivotalTrackerActivity.where(project_id: id)).sort do |x, y|
-      y.created_at <=> x.created_at
+      y.occurred_at <=> x.occurred_at
     end
   end
 end
