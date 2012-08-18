@@ -1,20 +1,20 @@
-.activity .accepted {
+.activity.pivotal_tracker .accepted {
   background-color: #507C00;
 }
 
-.activity .rejected {
+.activity.pivotal_tracker .rejected {
   background-color: #851024;
 }
 
-.activity .finished {
+.activity.pivotal_tracker .finished {
   background-color: #14274A;
 }
 
-.activity .delivered {
+.activity.pivotal_tracker .delivered {
   background-color: #E87F00;
 }
 
-.activity a.story_link {
+.activity.pivotal_tracker a.story_link {
   font-size: 0.5em;
   text-decoration: none;
   color: #327A9F;
