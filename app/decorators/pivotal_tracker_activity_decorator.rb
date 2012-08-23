@@ -10,6 +10,7 @@ class PivotalTrackerActivityDecorator
   def event_tag
     r = %r{^#{@activity.author} (.*?)(:|")}
     m = r.match @activity.description
+    return 'event' if m.nil?
     m[1].strip
   end
 
