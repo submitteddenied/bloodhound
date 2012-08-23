@@ -10,8 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require 'activity.css'
+ *= require 'pivotal_tracker_activity.css'
+ *= require 'github_activity.css'
  */
-
-= require 'activity.css'
-= require 'pivotal_tracker_activity.css'
-= require 'github_activity.css'
