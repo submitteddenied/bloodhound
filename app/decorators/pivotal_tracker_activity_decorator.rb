@@ -21,6 +21,7 @@ class PivotalTrackerActivityDecorator
   def message
     r = %r|^(.*?)(".*)|
     m = r.match @activity.description
+    return '' if m.nil?
     m[2]
   end
 
